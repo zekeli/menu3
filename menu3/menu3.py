@@ -12,7 +12,7 @@ class Menu:
 	UNDERLINE = "\033[4m"
 	ALLOW_QUIT = True
 
-	def warning(self, text): # Print a warning message
+	def warn(self, text): # Print a warning message
 		if self._windows():
 			print("* " + text)
 		else:
@@ -63,6 +63,23 @@ class Menu:
 			if self.ALLOW_QUIT and num.lower() == "q":
 				quit()
 		return int(num)
+
+	def config_menu(self, title, config, prompt = "", return_choice = "Return"): # Print a configuration menu with default values, returning the modified dict
+		while True:
+			choices = []
+			for k in config.keys():
+				choices.append(k + ": " + self.underline(str(config[k])))
+			choices.append(return_choice)
+			a = self. menu(title, choices, prompt)
+			if a == len(choices):
+				return config
+			(key, oldvalue) = choices[a-1].split(': ', 1)
+			b = input(self.bold(key + " [" + oldvalue + "]: "))
+			if b != "":
+				if self._is_int(b):
+					config[key] = int(b)
+				else:
+					config[key] = str(b)
 
 	def _windows(self): # Colors are not available on Windows
 		if os.name == "nt":
