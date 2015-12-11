@@ -1,5 +1,5 @@
 # Menu3
-Menu3 is a simple Python 3.x command line menu system. It can create simple menus and return the value selected by the user. It supports default values, multiple choices, and colors (Linux only).
+Menu3 is a simple Python 3.x command line menu system. It can create simple menus and return the value selected by the user. It supports default values, multiple choices, and colors (colors only work on Linux).
 
 ## Example:
 
