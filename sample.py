@@ -2,7 +2,7 @@
 import menu3
 
 # Create the menu
-m = menu3.Menu(True)
+m = menu3.Menu(False)
 
 # Set a list of food
 food = ["Pizza", "Hot dog", "Salad", "Soup"]

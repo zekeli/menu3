@@ -24,7 +24,7 @@ Ask the user for favorite food, providing the menu title, the list of choices, a
     food = ["Pizza", "Hot dog", "Salad", "Soup"]
     c = m.menu("Please select a favorite food", food, "Your choice, 'q' to quit:")
 
-Print the food selected using a success message (you can also use 'fail', 'warn' and 'info' to get different colors)
+Print the food selected using a success message (you can use 'success', 'fail', 'warn' and 'info' to get different colors)
 
     m.success("You selected: " + food[c-1])
 
