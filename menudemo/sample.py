@@ -26,7 +26,7 @@ m.success("You selected:  " + ssg)
 cfg = {'food': ssc, 'gocs': ssg}
 
 # Show a configuration menu, and update the choices
-cfg = m.config_menu("Please review and edit(splited by space) your choices: ", cfg)
+cfg = m.config_menu("Please review and edit(splited by comma) your choices: ", cfg)
 
 # Show an info message with the new values
 m.info(str(cfg))

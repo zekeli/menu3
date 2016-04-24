@@ -52,6 +52,11 @@ class Menu():
 			self.fail("Error: At Least One choice !!!" + "\n===========Please Choice Again !!!=========")
 			return False
 		
+		if len(num.split()) > 1:
+			print()
+			self.fail("Error: Please Only One choice !!!" + "\n===========Please Choice Again !!!=========")
+			return False			
+		
 		if not self._is_int(num) or int(num) < 0 or int(num) > len(choices):
 			print()
 			self.fail("Error: Invalid Choice: " + str(num) + "\n===========Please Choice Again !!!=========" )
@@ -135,6 +140,10 @@ class Menu():
 				return config
 			(key, oldvalue) = choices[a-1].split(': ', 1)
 			b = input(self.bold(key + " [" + oldvalue + "]: "))
+			if len(b.split()) >= 2:
+				print()
+				self.fail("Error: One more items, Must be splited by comma !!!" + "\n===========Please Type In Again !!!=========" )
+				continue
 			if b != "":
 				if self._is_int(b):
 					config[key] = int(b)
